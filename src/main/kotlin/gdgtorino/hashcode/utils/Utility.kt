@@ -9,7 +9,7 @@ object Utility {
     fun read(): InputData {
         val inputData = InputData()
         try {
-            File(INPUT_FILENAME).forEachLine {
+            javaClass.classLoader.getResourceAsStream(INPUT_FILENAME).reader().forEachLine {
                 if (inputData.firstValue == null) {
                     // first line
                     val (firstValue, secondValue, thirdValue, fourthValue) = it.split(' ')
